@@ -3,7 +3,7 @@
     "username": "postgres",
     "password": "postgres",
     "database": "express_db",
-    "host": "db",  // This will be the service name in Docker Compose
+    "host": "127.0.0.1",
     "dialect": "postgres"
   }
 }
