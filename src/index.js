@@ -1,13 +1,19 @@
 const express = require('express');
 const app = express();
 const userRoutes = require('./routes/users.route.js');
-const {sequelize} = require('./models/index.js');
+// const {sequelize} = require('./models/index.js');
+const { Sequelize } = require('./models/index.js');
 // const { sequelize } = require('./models');
 app.use(express.json());
 
 
 
 app.use('/api', userRoutes);
+
+const sequelize = new Sequelize(config.database, config.username, config.password, {
+  host: config.host,
+  dialect: config.dialect,
+});
 
 
 const startServer = async function () {
